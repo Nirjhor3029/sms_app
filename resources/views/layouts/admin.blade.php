@@ -31,6 +31,9 @@ $themePath = asset('theme/');
     <link rel="stylesheet" href="{{ $themePath }}/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ $themePath }}/plugins/summernote/summernote-bs4.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -122,6 +125,10 @@ $themePath = asset('theme/');
     <script src="{{ $themePath }}/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ $themePath }}/dist/js/pages/dashboard.js"></script>
+
+
+
+
 </body>
 
 </html>

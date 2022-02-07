@@ -137,9 +137,25 @@
             </a>
         </li> --}}
         <li class="nav-item">
-            <a class="nav-link" href="#" role="button" alt="Sign Out">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
+            <form method="POST" action="{{ route('logout') }}" id="logout">
+                @csrf
+
+                {{-- <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    {{ __('Log Out') }}
+                </button> --}}
+                <a class="nav-link" href="javascript:void(0)" title="Sign Out" role="button" id="logout_btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </form>
+
         </li>
     </ul>
 </nav>
+
+<script>
+    $(document).ready(function() {
+        $("#logout_btn").on("click", function() {
+            $('#logout').submit();
+        });
+    });
+</script>
