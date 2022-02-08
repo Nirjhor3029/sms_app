@@ -49,6 +49,9 @@ class Kernel extends HttpKernel
         'admin' => [
             \App\Http\Middleware\IsAdmin::class,
         ],
+        'company' => [
+            \App\Http\Middleware\IsCompany::class,
+        ],
     ];
 
     /**

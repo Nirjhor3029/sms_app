@@ -1,0 +1,6 @@
+:root {
+    --primary-text-color: #fff;
+}
+#current_balance {
+    color: var(--primary-text-color);
+}

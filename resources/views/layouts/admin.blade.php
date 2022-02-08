@@ -32,6 +32,8 @@ $themePath = asset('theme/');
     <!-- summernote -->
     <link rel="stylesheet" href="{{ $themePath }}/plugins/summernote/summernote-bs4.min.css">
 
+    <link rel="stylesheet" href="{{ asset('/css') }}/admin_layout.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>

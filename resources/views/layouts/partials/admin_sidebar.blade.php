@@ -16,6 +16,8 @@
             </div>
             <div class="info">
                 <a href="#" class="d-block">Alexander Pierce</a>
+                <span id="current_balance">22.24 <b>৳</b></span>
+
             </div>
         </div>
 
@@ -35,67 +37,174 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
-       with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.home') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
+                        </p>
+                    </a>
+                </li>
+
+                {{-- menu-open --}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-industry"></i>
+                        <p>
+                            Companies
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v1</p>
+                            <a href="{{ route('admin.company.all') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>All Company List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v2</p>
+                            <a href="{{ route('admin.company.create') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Create Company</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon 	fas fa-envelope-open-text"></i>
+                        <p>
+                            Messaging
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.sms.send') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Send SMS</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v3</p>
+                            <a href="{{ route('admin.sms.campaign') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Campaign</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.sms.sender_id') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Sender ID</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.sms.templates') }}" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Templates</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
-                            Widgets
-                            <span class="right badge badge-danger">New</span>
+                            Price & Converage
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Price</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
-                <li class="nav-header">EXAMPLES</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            Reports
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Pending SMS Report</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index2.html" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Rejected SMS Report</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index3.html" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>SMS Bill Report</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon 	fas fa-address-book"></i>
+                        <p>
+                            Phone Book
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">
+                                <i class="far fas fa-angle-right nav-icon"></i>
+                                <p>Contacts & Groups</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-header">Extra</li>
                 <li class="nav-item">
                     <a href="pages/calendar.html" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
-                            Calendar
+                            Statements
+                            <span class="badge badge-info right">2</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/calendar.html" class="nav-link">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <p>
+                            Campaign Report
                             <span class="badge badge-info right">2</span>
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-
+                @if (Session::get('isSuperAdmin', 0))
+                    <li class="nav-item">
+                        <a href="pages/gallery.html" class="nav-link">
+                            <i class="nav-icon far fa-image"></i>
+                            <p>
+                                Only Super Admin
+                            </p>
+                        </a>
+                    </li>
+                @endif
 
             </ul>
         </nav>

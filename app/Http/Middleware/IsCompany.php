@@ -4,11 +4,10 @@ namespace App\Http\Middleware;
 
 use App\Models\User;
 use Closure;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
+class IsCompany
 {
     /**
      * Handle an incoming request.
@@ -19,16 +18,9 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        // return Auth::user();
-        //Auth::user() &&  Auth::user()->admin == 1
         $user = User::with('role')->find(Auth::user()->id);
         if(isset($user->role)){
-            if (strtolower($user->role->role) == 'admin') {
-                // Session::put('isSuperAdmin', true);
-                session(['isSuperAdmin' => true]);	
-                return $next($request);
-            }elseif(strtolower($user->role->role) == 'company'){
-                session(['company' => true]);	
+            if (strtolower($user->role->role) == 'company') {
                 return $next($request);
             }
         }
